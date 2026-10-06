@@ -102,7 +102,7 @@ export const Control: React.FC<ControlProps> = ({ property, name, disabled, erro
           label: dataItem?.toString() ?? "",
           value: dataItem,
         }))}
-        onSelect={(selectedItem) => selectedItem && field.onChange(selectedItem)}
+        onSelect={(selectedItem) => isDefined(selectedItem) && field.onChange(selectedItem)}
         selectedValue={fieldValue}
         isDisabled={disabled || property.readOnly}
         onFocus={() => setFocusedField?.(name)}
